@@ -1,0 +1,598 @@
+@import "config";
+@import "menu";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  @include background;
+  background: $primary-color;
+  color: set-text-color($primary-color);
+  height: 100%;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+}
+
+// Headings
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+
+  &.lg-heading {
+    font-size: 6rem;
+  }
+
+  &.sm-heading {
+    margin-bottom: 2rem;
+    padding: 0.2rem 1rem;
+    background: rgba(lighten($primary-color, 2), 0.5);
+  }
+}
+
+a {
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+.text-secondary {
+  color: $secondary-color;
+}
+
+main {
+  padding: 4rem;
+  //height
+  min-height: calc(100vh - 60px);
+
+  .icons {
+    margin-top: 1rem;
+
+    a {
+      padding: 0.7rem;
+
+      &:hover {
+        color: $secondary-color;
+        @include easeout();
+      }
+    }
+  }
+
+  &#home {
+    overflow: hidden;
+    h1 {
+      margin-top: 20vh;
+    }
+  }
+}
+
+//About Me
+body {
+  @include background;
+  background: $primary-color;
+  color: set-text-color($primary-color);
+  height: 100%;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+}
+.about-info {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas:
+    "bioimage bio bio"
+    "job1 job2 job3";
+  grid-template-columns: repeat(3, 1fr);
+
+  .bio-image {
+    grid-area: bioimage;
+    margin: auto;
+    border-radius: 50%;
+    border: $secondary-color 3px solid;
+  }
+
+  .bio {
+    grid-area: bio;
+    font-size: 1.5rem;
+  }
+
+  .job-1 {
+    grid-area: job1;
+  }
+
+  .job-2 {
+    grid-area: job2;
+  }
+
+  .job-3 {
+    grid-area: job3;
+  }
+
+  .job {
+    background: lighten($primary-color, 5);
+    padding: 0.5rem;
+    border-bottom: $secondary-color 5px solid;
+  }
+}
+
+//Work
+
+.projects {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+
+  img {
+    width: 100%;
+    border: 3px whitesmoke solid;
+
+    &:hover {
+      opacity: 0.5;
+      border-color: $secondary-color;
+      @include easeout;
+    }
+  }
+}
+//Book Online
+
+.book-online {
+  display: flex;
+  justify-content: space-around;
+  align-self: auto;
+
+  p {
+    font-size: 1.25rem;
+  }
+
+  .book-image {
+    margin: auto;
+    border: $secondary-color 3px solid;
+  }
+
+  .book-1 {
+    grid-area: book1;
+    h3,
+    p {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .book-2 {
+    grid-area: book2;
+    h3,
+    p {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .book {
+    background: lighten($primary-color, 5);
+    padding: 0.5rem;
+    border-bottom: $secondary-color 5px solid;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+  .ppp {
+    font-size: 3.5rem;
+  }
+}
+// Select bars for purchasing plans
+input[type="select"] {
+  display: flex;
+  justify-content: center;
+  width: 66%;
+  background-color: #bdb76b;
+  color: black;
+  padding: 14px 20px;
+  margin: 0 auto;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="select"]:hover {
+  background-color: whitesmoke;
+}
+.button,
+input[type="submit"] {
+  width: 100%;
+  background-color: #bdb76b;
+  color: black;
+  padding: 14px 20px;
+  margin: 0 auto;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input[type="submit"]:hover {
+  background-color: whitesmoke;
+}
+//Plans & Pricing
+
+.about-Pricing {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas:
+    "plan1 plan2"
+    "plan3 plan4";
+  grid-template-columns: repeat(2, 1fr);
+
+  p {
+    font-size: 1rem;
+  }
+
+  .price {
+    grid-area: bio;
+    font-size: 1.5rem;
+  }
+
+  .plan-1 {
+    grid-area: plan1;
+    h3,
+    p {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .plan-2 {
+    grid-area: plan2;
+    h3,
+    p {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .plan-3 {
+    grid-area: plan3;
+    h3,
+    p {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .plan-4 {
+    grid-area: plan4;
+    h3,
+    p {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+
+  .plan {
+    background: lighten($primary-color, 5);
+    padding: 0.5rem;
+    border-bottom: $secondary-color 5px solid;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+  .ppp {
+    font-size: 3.5rem;
+  }
+  // Select bars for purchasing plans
+  input[type="select"] {
+    display: flex;
+    justify-content: center;
+    width: 66%;
+    background-color: #bdb76b;
+    color: black;
+    padding: 14px 20px;
+    margin: 0 auto;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[type="select"]:hover {
+    background-color: whitesmoke;
+  }
+  .button,
+  input[type="submit"] {
+    width: 100%;
+    background-color: #bdb76b;
+    color: black;
+    padding: 14px 20px;
+    margin: 0 auto;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  input[type="submit"]:hover {
+    background-color: whitesmoke;
+  }
+}
+
+//Nutrition
+
+.about-nutrition {
+  display: flex;
+  flex-direction: column;
+
+  .nutritionplan {
+    text-align: center;
+    padding: 20px;
+    p {
+      font-size: 1.25rem;
+    }
+  }
+
+  .nutrition-image {
+    height: 50%;
+    width: 60%;
+    margin: auto;
+    border: $secondary-color 3px solid;
+  }
+
+  .nutrition {
+    text-align: center;
+  }
+
+  input[type="submit"] {
+    width: 25%;
+    background-color: #bdb76b;
+    color: black;
+    padding: 14px 20px;
+    margin: 0 auto;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  input[type="submit"]:hover {
+    background-color: whitesmoke;
+  }
+}
+
+//Personal Blog
+
+body {
+  @include background;
+  background: $primary-color;
+  color: set-text-color($primary-color);
+  height: 100%;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+}
+.about-blog {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas:
+    "blogimage blog blog"
+    "blog1 blog2 blog3";
+  grid-template-columns: repeat(3, 1fr);
+
+  .blog-image {
+    grid-area: blogimage;
+    margin: auto;
+    border: $secondary-color 3px solid;
+    opacity: 0.6;
+  }
+
+  .blog {
+    grid-area: blog;
+    font-size: 1.5rem;
+    img {
+      width: 100%;
+    }
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  .blog-1 {
+    grid-area: blog1;
+  }
+
+  .blog-2 {
+    grid-area: blog2;
+  }
+
+  .blog-3 {
+    grid-area: blog3;
+  }
+
+  .blog {
+    background: lighten($primary-color, 5);
+    padding: 0.5rem;
+    border-bottom: $secondary-color 5px solid;
+  }
+}
+
+//Contact Page
+
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem;
+
+  div {
+    font-size: 2rem;
+    border: 3px whitesmoke solid;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 3rem;
+    @include easeout;
+
+    &:hover {
+      padding: 0.5rem 1.5rem;
+      background: $secondary-color;
+      color: set-text-color($secondary-color);
+      span {
+        color: set-text-color($secondary-color);
+      }
+    }
+  }
+}
+
+.contactform {
+  flex-basis: 50%;
+}
+
+label[for="lname"],
+label {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: whitesmoke;
+}
+
+input[type="text"],
+::placeholder {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  font-size: 1rem;
+  display: block;
+  margin: 10px auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type="submit"] {
+  width: 100%;
+  background-color: black;
+  color: #bdb76b;
+  padding: 14px 20px;
+  margin: 0 auto;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: whitesmoke;
+}
+
+//Training & Exercise
+
+.about-training {
+  display: flex;
+  flex-direction: column;
+
+  .trainingplan {
+    text-align: center;
+    padding: 20px;
+    p {
+      font-size: 1.25rem;
+    }
+  }
+
+  .training-image {
+    height: 70%;
+    width: 60%;
+    margin: auto;
+    border: $secondary-color 3px solid;
+  }
+
+  .training {
+    text-align: center;
+  }
+
+  input[type="submit"] {
+    width: 25%;
+    background-color: #bdb76b;
+    color: black;
+    padding: 14px 20px;
+    margin: 0 auto;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  input[type="submit"]:hover {
+    background-color: whitesmoke;
+  }
+}
+
+//Shop
+
+.shop {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  .item {
+    width: 33%;
+  }
+  .btn-dark {
+    text-align: center;
+  }
+
+  img {
+    width: 100%;
+    height: 70%;
+    border: 3px whitesmoke solid;
+
+    &:hover {
+      opacity: 0.5;
+      border-color: $secondary-color;
+      @include easeout;
+    }
+  }
+}
+
+//Button styles
+
+.btn {
+  display: block;
+  padding: 0.5rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+  &:hover {
+    background: $secondary-color;
+    color: set-text-color($secondary-color);
+  }
+}
+
+.btn-dark {
+  @extend .btn;
+  background: darken($primary-color, 50);
+  color: whitesmoke;
+}
+
+.btn-light {
+  @extend .btn;
+  background: lighten($primary-color, 50);
+  color: black;
+}
+
+#main-footer {
+  text-align: center;
+  padding: 1rem;
+  background: darken($primary-color, 10);
+  color: set-text-color($primary-color);
+  height: 60px;
+}
+
+@import "mobile";
